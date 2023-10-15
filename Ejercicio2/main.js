@@ -1,31 +1,31 @@
 class NodoDoble {
-    constructor(data) {
-      this._data = data;
-      this._next = null;
-      this._previous = null;
-    }
-  
-    set setData(newData) {
-      this._data = newData;
-    }
-    get getData() {
-      return this._data;
-    }
-  
-    set setNext(newNext) {
-      this._next = newNext;
-    }
-    get getNext() {
-      return this._next;
-    }
-  
-    set setPrevious(newPrevious) {
-      this._previous = newPrevious;
-    }
-    get getPrevious() {
-      return this._previous;
-    }
+  constructor(data) {
+    this._data = data;
+    this._next = null;
+    this._previous = null;
   }
+
+  set setData(newData) {
+    this._data = newData;
+  }
+  get getData() {
+    return this._data;
+  }
+
+  set setNext(newNext) {
+    this._next = newNext;
+  }
+  get getNext() {
+    return this._next;
+  }
+
+  set setPrevious(newPrevious) {
+    this._previous = newPrevious;
+  }
+  get getPrevious() {
+    return this._previous;
+  }
+}
 
 class ListaDoble {
   constructor() {
@@ -120,17 +120,15 @@ class ListaDoble {
 }
 
 const enterosPositivos = new ListaDoble();
-for (let index = 0; index < 10; index++) {
-    const numero = Math.random() * (100 - 1) + 1;
-    enterosPositivos.insertarNodo(numero);
+for (let i = 0; i < 10; i++) {
+  const numero = Math.random() * (100 - 1) + 1;
+  enterosPositivos.insertarNodo(numero);
 }
 
-
-
 const enterosNegativos = new ListaDoble();
-for (let i = 0; i < array.length; i++) {
-    const numero = Math.random() * (200 - 101) + 101;
-    enterosNegativos.insertarNodo(numero);
+for (let i = 0; i < 10; i++) {
+  const numero = Math.random() * (200 - 101) + 101;
+  enterosNegativos.insertarNodo(numero);
 }
 
 //mostrando listas
