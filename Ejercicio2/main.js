@@ -28,6 +28,7 @@ class NodoDoble {
 }
 
 class ListaDoble {
+  static valorLimite = 9;
   constructor() {
     this.head = null;
     this.tail = null;
@@ -117,21 +118,30 @@ class ListaDoble {
     this.tail = null;
     this.size = 0;
   }
+
+  nodosMayores() {
+    let tmp = this.head;
+
+    while (tmp !== null) {
+      if (tmp.getData > ListaDoble.valorLimite) {
+        console.log(`${tmp._data}`);
+      }
+      tmp = tmp._next;
+    }
+  }
 }
 
 const enterosPositivos = new ListaDoble();
 for (let i = 0; i < 10; i++) {
-  const numero = Math.random() * (100 - 1) + 1;
+  const numero = Math.floor(Math.random() * (20 - 1) + 1) + 1;
   enterosPositivos.insertarNodo(numero);
 }
 
-const enterosNegativos = new ListaDoble();
-for (let i = 0; i < 10; i++) {
-  const numero = Math.random() * (200 - 101) + 101;
-  enterosNegativos.insertarNodo(numero);
-}
 
-//mostrando listas
+//mostrando lista
 enterosPositivos.recorrerLista();
 console.log("\n");
-enterosNegativos.recorrerLista();
+
+enterosPositivos.nodosMayores();
+console.log("\n");
+
