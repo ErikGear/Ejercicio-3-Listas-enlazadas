@@ -59,28 +59,30 @@ class ListaDoble {
 
   insertarUltimoNoRepetido(data) {
     const nuevoNodo = new NodoDoble(data);
-
-    if (this.estaReperitdo(data)) {
-      console.log(`Elemento: ${data}, repetido`);
+    if (this.head === null) {
+      this.head = nuevoNodo;
+      this.tail = nuevoNodo;
+      this.size++;
     } else {
-      if (this.size === 0) {
-        this.head = new Nodo(data);
+      if (this.estaRepetido(data)) {
+        console.log(`El elemento ${data}, ya existe`);
       } else {
         this.tail._next = nuevoNodo;
         nuevoNodo._previous = this.tail;
         this.tail = nuevoNodo;
+        this.size++;
       }
-      this.size++;
     }
   }
 
-  estaReperitdo(data) {
+  estaRepetido(data) {
     let tmp = this.head;
 
     while (tmp !== null) {
       if (tmp.getData === data) {
         return true;
       }
+      tmp = tmp.getNext;
     }
 
     return false;
@@ -149,3 +151,11 @@ class ListaDoble {
 }
 
 const listaDoble = new ListaDoble();
+
+listaDoble.insertarUltimoNoRepetido(1);
+listaDoble.insertarUltimoNoRepetido(10);
+listaDoble.insertarUltimoNoRepetido(5);
+listaDoble.insertarUltimoNoRepetido(8);
+listaDoble.insertarUltimoNoRepetido(8);
+
+listaDoble.recorrerLista();
