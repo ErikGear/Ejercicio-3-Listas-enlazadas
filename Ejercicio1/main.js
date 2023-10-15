@@ -57,6 +57,17 @@ class ListaDoble {
     this.size++;
   }
 
+  insertarUltimo(data) {
+    if (this.size === 0) {
+      this.head = new Nodo(data);
+    } else {
+      const ultimo = this.ultimoNodo();
+      ultimo.setNext = new Nodo(data);
+    }
+    this.size++;
+  }
+
+
   recorrerLista() {
     let tmp = this.head;
 
